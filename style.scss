@@ -1,0 +1,6 @@
+// sass --watch style.scss:style.css pour pouvoir lire du scss
+@import "SCSS/abstract/variables",
+        "SCSS/abstract/mixins",
+        "SCSS/layout/header",
+        "SCSS/layout/footer",
+        "SCSS/layout/homepage";
