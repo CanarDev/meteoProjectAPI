@@ -5,5 +5,13 @@
   box-sizing: border-box;
   /* Merci kléklé ->  https://github.com/ClemOurs */
 }
+* body {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /*# sourceMappingURL=style.css.map */

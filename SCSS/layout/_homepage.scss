@@ -1,4 +1,11 @@
 * {
     @include oorigin;
-
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-color: antiquewhite;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 }
