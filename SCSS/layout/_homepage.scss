@@ -2,7 +2,6 @@
     @include oorigin;
     body{
         width: 100vw;
-        height: 100vh;
         background-color: rgb(58, 58, 58);
         background-size: cover;
         background-repeat: no-repeat;
@@ -13,17 +12,43 @@
         align-items: center;
         .firstView{
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             justify-content: center;
+            height: 100vh;
             align-items: center;
             gap: 30px;
             font-family: poppins, sans-serif;
+            form{
+                @include xs{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                }
+                input{
+                    padding: 1rem 2rem;
+                    font-size: 30px;
+                    text-align: center;
+                    border:  none;
+                    border-radius: 10px;
+                    &:hover{
+                        -webkit-filter: invert(100%);
+                        transition: 0.2s all;
+                    }
+                }
+            }
             .cityName{
                 border-radius: 10px;
                 >h1{
-                    font-size: 70px;
+                    font-size: 50px;
                     -webkit-filter: invert(100%);
                     padding: 1rem 2rem;
+                    text-align: center;
+                    width: fit-content;
+                    @include xs{
+                        font-size: 30px;
+                    }
                 }
             }
             
@@ -38,13 +63,39 @@
                 align-items: center;
                 border-radius: 10px;
                 >p{
-                    font-size: 50px;
+                    font-size: 40px;
                     -webkit-filter: invert(100%);
                 }
                 >img{
-                    width: 90px;
+                    width: 80px;
                 }
             }
+            .changeButton{
+                font-size: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.2s all;
+                @include xs{
+                    text-align: center;
+                    width: 360px;
+                }
+
+                &:hover{
+                    -webkit-filter: invert(100%);
+                    transition: 0.2s all;
+                }
+                .textButton{
+                    -webkit-filter: invert(100%);
+                    font-weight: 800;
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+        .secondView{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

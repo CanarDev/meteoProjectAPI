@@ -7,7 +7,6 @@
 }
 * body {
   width: 100vw;
-  height: 100vh;
   background-color: #3a3a3a;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,19 +18,47 @@
 }
 * body .firstView {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
+  height: 100vh;
   align-items: center;
   gap: 30px;
   font-family: poppins, sans-serif;
+}
+@media screen and (max-width: 700px) {
+  * body .firstView form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+* body .firstView form input {
+  padding: 1rem 2rem;
+  font-size: 30px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+}
+* body .firstView form input:hover {
+  -webkit-filter: invert(100%);
+  transition: 0.2s all;
 }
 * body .firstView .cityName {
   border-radius: 10px;
 }
 * body .firstView .cityName > h1 {
-  font-size: 70px;
+  font-size: 50px;
   -webkit-filter: invert(100%);
   padding: 1rem 2rem;
+  text-align: center;
+  width: fit-content;
+}
+@media screen and (max-width: 700px) {
+  * body .firstView .cityName > h1 {
+    font-size: 30px;
+  }
 }
 * body .firstView .degCard {
   width: 200px;
@@ -45,11 +72,38 @@
   border-radius: 10px;
 }
 * body .firstView .degCard > p {
-  font-size: 50px;
+  font-size: 40px;
   -webkit-filter: invert(100%);
 }
 * body .firstView .degCard > img {
-  width: 90px;
+  width: 80px;
+}
+* body .firstView .changeButton {
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+@media screen and (max-width: 700px) {
+  * body .firstView .changeButton {
+    text-align: center;
+    width: 360px;
+  }
+}
+* body .firstView .changeButton:hover {
+  -webkit-filter: invert(100%);
+  transition: 0.2s all;
+}
+* body .firstView .changeButton .textButton {
+  -webkit-filter: invert(100%);
+  font-weight: 800;
+  padding: 1rem 2rem;
+}
+* body .secondView {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
