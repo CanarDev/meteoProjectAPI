@@ -8,6 +8,8 @@ const options = {
 const weatherKey = "07d06524f38e4601a78223627222301"
 const unsplashKey = "qhk0xx7XagH1GYxZtFDMnPYWRPKpkf59UaYdoxj-vkA"
 const body = document.querySelector('body')
+const degArroundMe = document.querySelector('#degArroundMe')
+const firstView = document.querySelector('.firstView')
 
 // // etch('http://ipwhois.app/json/')   
 // //    .then(response => response.json())
@@ -25,23 +27,36 @@ fetch('https://ipwhois.app/json/')
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                const degLogo = document.createElement('img')
+                const degInfo = document.createElement('p')
+                const degCard = document.createElement('div')
+                const degCity = document.createElement('h1')
                 const locationName = data.location.name
+                degCity.innerHTML = locationName
                 console.log(locationName)
                 const locationCountry = data.location.country
                 console.log(locationCountry)
-                fetch('https://api.unsplash.com/search/photos?client_id=' + unsplashKey + '&page=1&query=' + locationCountry + ' ' + locationName)
+                degCard.classList.add('degCard')
+                degLogo.src = data.current.condition.icon
+                degInfo.innerHTML = data.current.temp_c +'℃'
+                firstView.appendChild(degCity)
+                degCard.appendChild(degLogo)
+                degCard.appendChild(degInfo)
+                degArroundMe.appendChild(degCard)
+                const x = Math.floor(Math.random() * 8)
+                fetch('https://api.unsplash.com/search/photos/?client_id=' + unsplashKey + '&page=1&per_page=5&orientation=landscape&query=' + locationName + ' ' + locationCountry)
                     .then(response => response.json())
                     .then(dataUnsplash => {
                         
                         console.log(dataUnsplash.results)
-                        if (dataUnsplash.results){
-                            
-                        }
-
-
                         const n = Math.floor(Math.random() * dataUnsplash.results.length)
                         console.log(n)
-                        body.style.backgroundImage = 'url(' + dataUnsplash.results[n].urls.regular + ')' 
+                        const color = dataUnsplash.results[n].color
+                        body.style.backgroundColor = color
+                        degCard.style.backgroundColor = color
+                        body.style.backgroundImage = 'url(' + dataUnsplash.results[n].urls.raw + ')' 
+                        degInfo.style.color = color
+                        degCity.style.color = color
                     })
             })
     })

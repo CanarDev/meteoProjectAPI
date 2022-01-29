@@ -3,9 +3,43 @@
     body{
         width: 100vw;
         height: 100vh;
-        background-color: antiquewhite;
+        background-color: rgb(58, 58, 58);
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .firstView{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-family: poppins, sans-serif;
+            >h1{
+                font-size: 70px;
+                -webkit-filter: invert(100%);
+            }
+            .degCard{
+                width: 200px;
+                height: 250px;
+                background-color: rgba(51, 51, 51, 0.438);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                >p{
+                    font-size: 50px;
+                    -webkit-filter: invert(100%);
+                }
+                >img{
+                    width: 90px;
+                }
+            }
+        }
     }
 }
