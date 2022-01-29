@@ -18,10 +18,15 @@
             align-items: center;
             gap: 30px;
             font-family: poppins, sans-serif;
-            >h1{
-                font-size: 70px;
-                -webkit-filter: invert(100%);
+            .cityName{
+                border-radius: 10px;
+                >h1{
+                    font-size: 70px;
+                    -webkit-filter: invert(100%);
+                    padding: 1rem 2rem;
+                }
             }
+            
             .degCard{
                 width: 200px;
                 height: 250px;

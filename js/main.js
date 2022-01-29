@@ -31,6 +31,8 @@ fetch('https://ipwhois.app/json/')
                 const degInfo = document.createElement('p')
                 const degCard = document.createElement('div')
                 const degCity = document.createElement('h1')
+                const cityName = document.createElement('div')
+                cityName.classList.add('cityName')
                 const locationName = data.location.name
                 degCity.innerHTML = locationName
                 console.log(locationName)
@@ -39,7 +41,8 @@ fetch('https://ipwhois.app/json/')
                 degCard.classList.add('degCard')
                 degLogo.src = data.current.condition.icon
                 degInfo.innerHTML = data.current.temp_c +'℃'
-                firstView.appendChild(degCity)
+                cityName.appendChild(degCity)
+                firstView.appendChild(cityName)
                 degCard.appendChild(degLogo)
                 degCard.appendChild(degInfo)
                 degArroundMe.appendChild(degCard)
@@ -57,6 +60,7 @@ fetch('https://ipwhois.app/json/')
                         body.style.backgroundImage = 'url(' + dataUnsplash.results[n].urls.raw + ')' 
                         degInfo.style.color = color
                         degCity.style.color = color
+                        cityName.style.backgroundColor = color
                     })
             })
     })
