@@ -13,7 +13,6 @@ const searchButton = document.querySelector('.searchButton')
 fetch('https://ipwhois.app/json/')   
     .then(response => response.json())
     .then(response => {
-        console.log(response)
         let address = response.ip
         searchCity.addEventListener('keydown', (event) => event.key === 'Enter' && searchButton.click());
         searchButton.addEventListener('click', () => {
@@ -23,7 +22,6 @@ fetch('https://ipwhois.app/json/')
         var City = ""
         if (localStorage.getItem('locate') === null){
             City = address
-            console.log('')
         }else{
             City = localStorage.getItem('locate');
         }
@@ -31,7 +29,6 @@ fetch('https://ipwhois.app/json/')
         fetch('https://api.weatherapi.com/v1/current.json?key=' + weatherKey + '&q=' + City + '&aqi=no')
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 
 
                 const cityName = document.createElement('div')
@@ -53,7 +50,6 @@ fetch('https://ipwhois.app/json/')
                 cityName.classList.add('cityName')
                 const locationName = data.location.name
                 degCity.innerHTML = locationName
-                console.log(locationName)
                 cityName.appendChild(degCity)
                 firstView.appendChild(cityName)
                 
@@ -61,7 +57,6 @@ fetch('https://ipwhois.app/json/')
 
                 degArroundMe.id = 'degArroundMe'
                 const locationCountry = data.location.country
-                console.log(locationCountry)
                 degCard.classList.add('degCard')
                 degLogo.src = data.current.condition.icon
                 degInfo.innerHTML = data.current.temp_c +'℃'
@@ -91,8 +86,6 @@ fetch('https://ipwhois.app/json/')
                         searchCity.style.backgroundColor = color
                         searchButton.style.backgroundColor = color
                         
-                        console.log(dataUnsplash.results)
-                        console.log(n)
                         
                         body.style.backgroundColor = color
                         degCard.style.backgroundColor = color
@@ -115,8 +108,6 @@ fetch('https://ipwhois.app/json/')
                                 searchCity.style.backgroundColor = color
                                 searchButton.style.backgroundColor = color
                                 
-                                console.log(dataUnsplash.results)
-                                console.log(n)
                                 
                                 body.style.backgroundColor = color
                                 degCard.style.backgroundColor = color
